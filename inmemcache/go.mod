@@ -1,3 +1,3 @@
-module github.com/yusenfei/memcache/inmemcache
+module inmemcache
 
 go 1.18

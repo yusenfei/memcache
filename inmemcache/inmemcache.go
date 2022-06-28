@@ -1,12 +1,11 @@
 package inmemcache
 
-import "os"
-
 import (
 	"bytes"
 	"errors"
 	"fmt"
 	"io/fs"
+	"os"
 	syspath "path"
 	"strings"
 	"sync"
