@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	rootFS := memfs.New()
+	rootFS := inmemcache.New()
 
 	err := rootFS.MkdirAll("dir1/dir2", 0777)
 	if err != nil {
