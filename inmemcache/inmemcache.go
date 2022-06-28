@@ -13,6 +13,14 @@ import (
 	"time"
 )
 
+type dir struct {
+	mu       sync.Mutex
+	name     string
+	perm     os.FileMode
+	modTime  time.Time
+	children map[string]childI
+}
+
 // FS is an in-memory filesystem that implements
 // io/fs.FS
 type FS struct {
@@ -246,14 +254,6 @@ func (rootFS *FS) Open(name string) (fs.File, error) {
 	}
 
 	return nil, fmt.Errorf("unexpected file type in fs: %s: %w", name, fs.ErrInvalid)
-}
-
-type dir struct {
-	mu       sync.Mutex
-	name     string
-	perm     os.FileMode
-	modTime  time.Time
-	children map[string]childI
 }
 
 type fhDir struct {
