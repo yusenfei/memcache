@@ -2,9 +2,8 @@ package main
 
 import (
 	"fmt"
+	"github.com/yusenfei/memcache/inmemcache/inmemcache"
 	"io/fs"
-
-	"github.com/yusenfei/memcache/inmemcache"
 )
 
 func main() {
